@@ -1,0 +1,10 @@
+version: '2'
+services:
+    dancekvartal-elasticsearch:
+        container_name: dancekvartal-elasticsearch
+        image: elasticsearch:2.4.1
+        # volumes:
+        #     - ~/volumes/jhipster/dancekvartal/elasticsearch/:/usr/share/elasticsearch/data/
+        ports:
+            - 9200:9200
+            - 9300:9300

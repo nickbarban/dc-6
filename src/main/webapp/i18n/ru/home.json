@@ -1,0 +1,19 @@
+{
+    "home": {
+        "title": "Добро пожаловать в <span class=\"nobr\">Танцевальный Квартал!</span>",
+        "subtitle": "Это ваша панель управления",
+        "logged": {
+            "message": "Вы вошли как пользователь \"{{username}}\"."
+        },
+        "question": "Если у Вас возникли вопросы по панели управления:",
+        "link": {
+            "homepage": "Домашняя страница Танцевального Квартала",
+            "stackoverflow": "JHipster на Stack Overflow",
+            "bugtracker": "JHipster баг трекер",
+            "chat": "JHipster public chat room",
+            "follow": "пользователь @java_hipster в Twitter"
+        },
+        "like": "Если вам нравится Танцевальный квартал, не забудьте дать нам звездочку на",
+        "github": "GitHub"
+    }
+}

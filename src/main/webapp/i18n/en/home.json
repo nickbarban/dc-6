@@ -1,0 +1,19 @@
+{
+    "home": {
+        "title": "Welcome to <span class=\"nobr\">Dance Kvartal!</span>",
+        "subtitle": "This is your dashboard",
+        "logged": {
+            "message": "You are logged in as user \"{{username}}\"."
+        },
+        "question": "If you have any question on dashboard:",
+        "link": {
+            "homepage": "DanceKvartal homepage",
+            "stackoverflow": "DanceKvartal on Stack Overflow",
+            "bugtracker": "DanceKvartal bug tracker",
+            "chat": "DanceKvartal public chat room",
+            "follow": "follow @dance_kvartal on Twitter"
+        },
+        "like": "If you like DanceKvartal, don't forget to give us a star on",
+        "github": "GitHub"
+    }
+}

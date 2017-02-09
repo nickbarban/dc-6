@@ -1,0 +1,12 @@
+version: '2'
+services:
+    dancekvartal-postgresql:
+        container_name: dancekvartal-postgresql
+        image: postgres:9.5.4
+        # volumes:
+        #     - ~/volumes/jhipster/dancekvartal/postgresql/:/var/lib/postgresql/
+        environment:
+            - POSTGRES_USER=dancekvartal
+            - POSTGRES_PASSWORD=
+        ports:
+            - 5432:5432

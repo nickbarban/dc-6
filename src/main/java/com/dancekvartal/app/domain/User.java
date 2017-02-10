@@ -18,6 +18,7 @@ import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
@@ -77,7 +78,8 @@ public class User extends AbstractAuditingEntity implements Serializable {
     private String langKey;
 
     @Size(max = 256)
-    @Column(name = "image_url", length = 256)
+    @Transient
+//    @Column(name = "image_url", length = 256)
     private String imageUrl;
 
     @Size(max = 20)

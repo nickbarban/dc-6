@@ -141,3 +141,11 @@ Desktop.ini
 # ESLint
 ######################
 .eslintcache
+
+######################
+# Unversioned files at startup
+######################
+src/main/webapp/bower_components/bootstrap-sass/assets/images/
+src/test/gatling/bodies/
+src/test/gatling/data/
+src/test/gatling/simulations/

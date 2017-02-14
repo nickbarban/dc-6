@@ -1,0 +1,63 @@
+
+<div>
+    <h2><span data-translate="dancekvartalApp.student.detail.title">Student</span> {{vm.student.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row jh-entity-details">
+        <dt><span data-translate="dancekvartalApp.student.firstname">Firstname</span></dt>
+        <dd>
+            <span>{{vm.student.firstname}}</span>
+        </dd>
+        <dt><span data-translate="dancekvartalApp.student.lastname">Lastname</span></dt>
+        <dd>
+            <span>{{vm.student.lastname}}</span>
+        </dd>
+        <dt><span data-translate="dancekvartalApp.student.birthday">Birthday</span></dt>
+        <dd>
+            <span>{{vm.student.birthday | date:'mediumDate'}}</span>
+        </dd>
+        <dt><span data-translate="dancekvartalApp.student.address">Address</span></dt>
+        <dd>
+            <span>{{vm.student.address}}</span>
+        </dd>
+        <dt><span data-translate="dancekvartalApp.student.phone1">Phone 1</span></dt>
+        <dd>
+            <span>{{vm.student.phone1}}</span>
+        </dd>
+        <dt><span data-translate="dancekvartalApp.student.phone2">Phone 2</span></dt>
+        <dd>
+            <span>{{vm.student.phone2}}</span>
+        </dd>
+        <dt><span data-translate="dancekvartalApp.student.email">Email</span></dt>
+        <dd>
+            <span>{{vm.student.email}}</span>
+        </dd>
+        <dt><span data-translate="dancekvartalApp.student.active">Active</span></dt>
+        <dd>
+            <span>{{vm.student.active}}</span>
+        </dd>
+        <dt><span data-translate="dancekvartalApp.student.photoUrl">Photo Url</span></dt>
+        <dd>
+            <span>{{vm.student.photoUrl}}</span>
+        </dd>
+        <dt><span data-translate="dancekvartalApp.student.userName">User Name</span></dt>
+        <dd>
+            <span>{{vm.student.userName}}</span>
+        </dd>
+        <dt><span data-translate="dancekvartalApp.student.password">Password</span></dt>
+        <dd>
+            <span>{{vm.student.password}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="studentmySuffix-detail.edit({id:vm.student.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

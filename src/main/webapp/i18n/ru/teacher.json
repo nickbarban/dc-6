@@ -1,0 +1,32 @@
+{
+    "dancekvartalApp": {
+        "teacher" : {
+            "home": {
+                "title": "Teachers",
+                "createLabel": "Создать новый Teacher",
+                "createOrEditLabel": "Создать или отредактировать Teacher",
+                "search": "Найти Teacher"
+            },
+            "created": "Новый Teacher создан с идентификатором {{ param }}",
+            "updated": "Teacher обновлен с идентификатором {{ param }}",
+            "deleted": "Teacher удален с идентификатором {{ param }}",
+            "delete": {
+                "question": "Вы уверены что хотите удалить Teacher {{ id }}?"
+            },
+            "detail": {
+                "title": "Teacher"
+            },
+            "firstname": "Firstname",
+            "lastname": "Lastname",
+            "birthday": "Birthday",
+            "address": "Address",
+            "phone1": "Phone 1",
+            "phone2": "Phone 2",
+            "active": "Active",
+            "email": "Email",
+            "photoUrl": "Photo Url",
+            "userName": "User Name",
+            "password": "Password"
+        }
+    }
+}

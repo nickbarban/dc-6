@@ -1,0 +1,23 @@
+{
+    "dancekvartalApp": {
+        "pay" : {
+            "home": {
+                "title": "Pays",
+                "createLabel": "Create a new Pay",
+                "createOrEditLabel": "Create or edit a Pay",
+                "search": "Search for Pay"
+            },
+            "created": "A new Pay is created with identifier {{ param }}",
+            "updated": "A Pay is updated with identifier {{ param }}",
+            "deleted": "A Pay is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Pay {{ id }}?"
+            },
+            "detail": {
+                "title": "Pay"
+            },
+            "date": "Date",
+            "sum": "Sum"
+        }
+    }
+}

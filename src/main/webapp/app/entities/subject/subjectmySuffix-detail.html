@@ -1,0 +1,35 @@
+
+<div>
+    <h2><span data-translate="dancekvartalApp.subject.detail.title">Subject</span> {{vm.subject.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row jh-entity-details">
+        <dt><span data-translate="dancekvartalApp.subject.name">Name</span></dt>
+        <dd>
+            <span>{{vm.subject.name}}</span>
+        </dd>
+        <dt><span data-translate="dancekvartalApp.subject.description">Description</span></dt>
+        <dd>
+            <span>{{vm.subject.description}}</span>
+        </dd>
+        <dt><span data-translate="dancekvartalApp.subject.active">Active</span></dt>
+        <dd>
+            <span>{{vm.subject.active}}</span>
+        </dd>
+        <dt><span data-translate="dancekvartalApp.subject.price">Price</span></dt>
+        <dd>
+            <span>{{vm.subject.price}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="subjectmySuffix-detail.edit({id:vm.subject.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

@@ -1,0 +1,55 @@
+
+<div>
+    <h2><span data-translate="dancekvartalApp.parent.detail.title">Parent</span> {{vm.parent.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row jh-entity-details">
+        <dt><span data-translate="dancekvartalApp.parent.firstname">Firstname</span></dt>
+        <dd>
+            <span>{{vm.parent.firstname}}</span>
+        </dd>
+        <dt><span data-translate="dancekvartalApp.parent.lastname">Lastname</span></dt>
+        <dd>
+            <span>{{vm.parent.lastname}}</span>
+        </dd>
+        <dt><span data-translate="dancekvartalApp.parent.birthday">Birthday</span></dt>
+        <dd>
+            <span>{{vm.parent.birthday | date:'mediumDate'}}</span>
+        </dd>
+        <dt><span data-translate="dancekvartalApp.parent.address">Address</span></dt>
+        <dd>
+            <span>{{vm.parent.address}}</span>
+        </dd>
+        <dt><span data-translate="dancekvartalApp.parent.phone1">Phone 1</span></dt>
+        <dd>
+            <span>{{vm.parent.phone1}}</span>
+        </dd>
+        <dt><span data-translate="dancekvartalApp.parent.phone2">Phone 2</span></dt>
+        <dd>
+            <span>{{vm.parent.phone2}}</span>
+        </dd>
+        <dt><span data-translate="dancekvartalApp.parent.email">Email</span></dt>
+        <dd>
+            <span>{{vm.parent.email}}</span>
+        </dd>
+        <dt><span data-translate="dancekvartalApp.parent.active">Active</span></dt>
+        <dd>
+            <span>{{vm.parent.active}}</span>
+        </dd>
+        <dt><span data-translate="dancekvartalApp.parent.photoUrl">Photo Url</span></dt>
+        <dd>
+            <span>{{vm.parent.photoUrl}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span data-translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="parentmySuffix-detail.edit({id:vm.parent.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-sm-down" data-translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

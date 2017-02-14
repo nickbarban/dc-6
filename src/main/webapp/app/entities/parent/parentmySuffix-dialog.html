@@ -1,0 +1,126 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()" show-validation>
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myParentLabel" data-translate="dancekvartalApp.parent.home.createOrEditLabel">Create or edit a Parent</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.parent.id">
+            <label for="id" data-translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.parent.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="dancekvartalApp.parent.firstname" for="field_firstname">Firstname</label>
+            <input type="text" class="form-control" name="firstname" id="field_firstname"
+                    ng-model="vm.parent.firstname"
+                    required/>
+            <div ng-show="editForm.firstname.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.firstname.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="dancekvartalApp.parent.lastname" for="field_lastname">Lastname</label>
+            <input type="text" class="form-control" name="lastname" id="field_lastname"
+                    ng-model="vm.parent.lastname"
+                    required/>
+            <div ng-show="editForm.lastname.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.lastname.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="dancekvartalApp.parent.birthday" for="field_birthday">Birthday</label>
+                <div class="input-group">
+                    <input id="field_birthday" type="text" class="form-control" name="birthday" uib-datepicker-popup="{{dateformat}}" ng-model="vm.parent.birthday" is-open="vm.datePickerOpenStatus.birthday"
+                    required/>
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('birthday')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+            <div ng-show="editForm.birthday.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.birthday.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="dancekvartalApp.parent.address" for="field_address">Address</label>
+            <input type="text" class="form-control" name="address" id="field_address"
+                    ng-model="vm.parent.address"
+                    required/>
+            <div ng-show="editForm.address.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.address.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="dancekvartalApp.parent.phone1" for="field_phone1">Phone 1</label>
+            <input type="text" class="form-control" name="phone1" id="field_phone1"
+                    ng-model="vm.parent.phone1"
+                    required/>
+            <div ng-show="editForm.phone1.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.phone1.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="dancekvartalApp.parent.phone2" for="field_phone2">Phone 2</label>
+            <input type="text" class="form-control" name="phone2" id="field_phone2"
+                    ng-model="vm.parent.phone2"
+                    required/>
+            <div ng-show="editForm.phone2.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.phone2.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="dancekvartalApp.parent.email" for="field_email">Email</label>
+            <input type="text" class="form-control" name="email" id="field_email"
+                    ng-model="vm.parent.email"
+                    />
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="dancekvartalApp.parent.active" for="field_active">Active</label>
+            <input type="checkbox" class="form-control" name="active" id="field_active"
+                    ng-model="vm.parent.active"
+                    />
+            <div ng-show="editForm.active.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.active.$error.required" data-translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" data-translate="dancekvartalApp.parent.photoUrl" for="field_photoUrl">Photo Url</label>
+            <input type="text" class="form-control" name="photoUrl" id="field_photoUrl"
+                    ng-model="vm.parent.photoUrl"
+                    />
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span data-translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span data-translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

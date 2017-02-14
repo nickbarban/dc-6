@@ -20,5 +20,17 @@
 
     <cache alias="com.dancekvartal.app.domain.User.persistentTokens" uses-template="simple"/>
 
+    <cache alias="com.dancekvartal.app.domain.Lesson" uses-template="simple"/>
+
+    <cache alias="com.dancekvartal.app.domain.Parent" uses-template="simple"/>
+
+    <cache alias="com.dancekvartal.app.domain.Pay" uses-template="simple"/>
+
+    <cache alias="com.dancekvartal.app.domain.Student" uses-template="simple"/>
+
+    <cache alias="com.dancekvartal.app.domain.Subject" uses-template="simple"/>
+
+    <cache alias="com.dancekvartal.app.domain.Teacher" uses-template="simple"/>
+
     <!-- jhipster-needle-ehcache-add-entry -->
 </config>

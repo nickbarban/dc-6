@@ -14,6 +14,8 @@
     <link rel="stylesheet" href="bower_components/angular-loading-bar/build/loading-bar.css">
     <link rel="stylesheet" href="bower_components/bootstrap-material-design/dist/css/bootstrap-material-design.css">
     <link rel="stylesheet" href="bower_components/bootstrap-material-design/dist/css/ripples.css">
+    <!-- Angular Material -->
+    <link rel="stylesheet" href="/bower_components/angular-material/angular-material.css">
     <!-- endinject -->
     <!-- endbuild -->
     <!-- build:css content/css/main.css -->
@@ -56,8 +58,10 @@
 <script src="bower_components/stomp-websocket/lib/stomp.min.js"></script>
 <script src="bower_components/arrive/src/arrive.js"></script>
 <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+
 <script src="bower_components/angular/angular.js"></script>
 <script src="bower_components/angular-aria/angular-aria.js"></script>
+
 <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
 <script src="bower_components/angular-cache-buster/angular-cache-buster.js"></script>
 <script src="bower_components/angular-cookies/angular-cookies.js"></script>
@@ -67,7 +71,8 @@
 <script src="bower_components/angular-resource/angular-resource.js"></script>
 <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
 <script src="bower_components/angular-translate/angular-translate.js"></script>
-<script src="bower_components/angular-translate-interpolation-messageformat/angular-translate-interpolation-messageformat.js"></script>
+<script
+    src="bower_components/angular-translate-interpolation-messageformat/angular-translate-interpolation-messageformat.js"></script>
 <script src="bower_components/angular-translate-loader-partial/angular-translate-loader-partial.js"></script>
 <script src="bower_components/angular-translate-storage-cookie/angular-translate-storage-cookie.js"></script>
 <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
@@ -76,6 +81,12 @@
 <script src="bower_components/ngInfiniteScroll/build/ng-infinite-scroll.js"></script>
 <script src="bower_components/bootstrap-material-design/dist/js/material.js"></script>
 <script src="bower_components/bootstrap-material-design/dist/js/ripples.js"></script>
+
+<!-- Angular Material -->
+<!--<script src="bower_components/angular/angular.js"></script>-->
+<!--<script src="bower_components/angular-aria/angular-aria.js"></script>-->
+<script src="bower_components/angular-animate/angular-animate.js"></script>
+<script src="bower_components/angular-material/angular-material.js"></script>
 <!-- endinject -->
 <!-- endbuild -->
 
@@ -101,6 +112,48 @@
 <script src="app/layouts/error/error.state.js"></script>
 <script src="app/home/home.state.js"></script>
 <script src="app/home/home.controller.js"></script>
+<script src="app/entities/teacher/teachermySuffix-dialog.controller.js"></script>
+<script src="app/entities/teacher/teachermySuffix-detail.controller.js"></script>
+<script src="app/entities/teacher/teachermySuffix-delete-dialog.controller.js"></script>
+<script src="app/entities/teacher/teachermySuffix.state.js"></script>
+<script src="app/entities/teacher/teachermySuffix.service.js"></script>
+<script src="app/entities/teacher/teachermySuffix.search.service.js"></script>
+<script src="app/entities/teacher/teachermySuffix.controller.js"></script>
+<script src="app/entities/subject/subjectmySuffix-dialog.controller.js"></script>
+<script src="app/entities/subject/subjectmySuffix-detail.controller.js"></script>
+<script src="app/entities/subject/subjectmySuffix-delete-dialog.controller.js"></script>
+<script src="app/entities/subject/subjectmySuffix.state.js"></script>
+<script src="app/entities/subject/subjectmySuffix.service.js"></script>
+<script src="app/entities/subject/subjectmySuffix.search.service.js"></script>
+<script src="app/entities/subject/subjectmySuffix.controller.js"></script>
+<script src="app/entities/student/studentmySuffix-dialog.controller.js"></script>
+<script src="app/entities/student/studentmySuffix-detail.controller.js"></script>
+<script src="app/entities/student/studentmySuffix-delete-dialog.controller.js"></script>
+<script src="app/entities/student/studentmySuffix.state.js"></script>
+<script src="app/entities/student/studentmySuffix.service.js"></script>
+<script src="app/entities/student/studentmySuffix.search.service.js"></script>
+<script src="app/entities/student/studentmySuffix.controller.js"></script>
+<script src="app/entities/pay/paymySuffix-dialog.controller.js"></script>
+<script src="app/entities/pay/paymySuffix-detail.controller.js"></script>
+<script src="app/entities/pay/paymySuffix-delete-dialog.controller.js"></script>
+<script src="app/entities/pay/paymySuffix.state.js"></script>
+<script src="app/entities/pay/paymySuffix.service.js"></script>
+<script src="app/entities/pay/paymySuffix.search.service.js"></script>
+<script src="app/entities/pay/paymySuffix.controller.js"></script>
+<script src="app/entities/parent/parentmySuffix-dialog.controller.js"></script>
+<script src="app/entities/parent/parentmySuffix-detail.controller.js"></script>
+<script src="app/entities/parent/parentmySuffix-delete-dialog.controller.js"></script>
+<script src="app/entities/parent/parentmySuffix.state.js"></script>
+<script src="app/entities/parent/parentmySuffix.service.js"></script>
+<script src="app/entities/parent/parentmySuffix.search.service.js"></script>
+<script src="app/entities/parent/parentmySuffix.controller.js"></script>
+<script src="app/entities/lesson/lessonmySuffix-dialog.controller.js"></script>
+<script src="app/entities/lesson/lessonmySuffix-detail.controller.js"></script>
+<script src="app/entities/lesson/lessonmySuffix-delete-dialog.controller.js"></script>
+<script src="app/entities/lesson/lessonmySuffix.state.js"></script>
+<script src="app/entities/lesson/lessonmySuffix.service.js"></script>
+<script src="app/entities/lesson/lessonmySuffix.search.service.js"></script>
+<script src="app/entities/lesson/lessonmySuffix.controller.js"></script>
 <script src="app/entities/entity.state.js"></script>
 <script src="app/components/util/truncate-words.filter.js"></script>
 <script src="app/components/util/truncate-characters.filter.js"></script>

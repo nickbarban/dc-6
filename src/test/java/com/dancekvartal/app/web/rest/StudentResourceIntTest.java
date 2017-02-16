@@ -3,6 +3,7 @@ package com.dancekvartal.app.web.rest;
 import com.dancekvartal.app.DancekvartalApp;
 
 import com.dancekvartal.app.domain.Student;
+import com.dancekvartal.app.domain.Subject;
 import com.dancekvartal.app.repository.StudentRepository;
 import com.dancekvartal.app.service.StudentService;
 import com.dancekvartal.app.repository.search.StudentSearchRepository;
@@ -128,6 +129,11 @@ public class StudentResourceIntTest {
                 .photoUrl(DEFAULT_PHOTO_URL)
                 .userName(DEFAULT_USER_NAME)
                 .password(DEFAULT_PASSWORD);
+        // Add required entity
+        Subject subjects = SubjectResourceIntTest.createEntity(em);
+        em.persist(subjects);
+        em.flush();
+        student.getSubjects().add(subjects);
         return student;
     }
 

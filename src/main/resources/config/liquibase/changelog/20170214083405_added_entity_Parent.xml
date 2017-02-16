@@ -60,5 +60,16 @@
             <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here, do not remove-->
         </createTable>
         
+        <createTable tableName="parent_children">
+            <column name="children_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+            <column name="parents_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+
+        <addPrimaryKey columnNames="parents_id, children_id" tableName="parent_children"/>
+        
     </changeSet>
 </databaseChangeLog>

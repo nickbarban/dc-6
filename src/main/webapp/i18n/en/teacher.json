@@ -26,7 +26,10 @@
             "email": "Email",
             "photoUrl": "Photo Url",
             "userName": "User Name",
-            "password": "Password"
+            "password": "Password",
+            "subject": "Subject",
+            "lessons": "Lessons",
+            "pays": "Pays"
         }
     }
 }

@@ -8,6 +8,8 @@ import javax.persistence.*;
 import javax.validation.constraints.*;
 import java.io.Serializable;
 import java.time.LocalDate;
+import java.util.HashSet;
+import java.util.Set;
 import java.util.Objects;
 
 /**
@@ -59,6 +61,13 @@ public class Parent implements Serializable {
 
     @Column(name = "photo_url")
     private String photoUrl;
+
+    @ManyToMany
+    @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
+    @JoinTable(name = "parent_children",
+               joinColumns = @JoinColumn(name="parents_id", referencedColumnName="id"),
+               inverseJoinColumns = @JoinColumn(name="children_id", referencedColumnName="id"))
+    private Set<Student> children = new HashSet<>();
 
     public Long getId() {
         return id;
@@ -183,6 +192,31 @@ public class Parent implements Serializable {
 
     public void setPhotoUrl(String photoUrl) {
         this.photoUrl = photoUrl;
+    }
+
+    public Set<Student> getChildren() {
+        return children;
+    }
+
+    public Parent children(Set<Student> students) {
+        this.children = students;
+        return this;
+    }
+
+    public Parent addChildren(Student student) {
+        this.children.add(student);
+        student.getParents().add(this);
+        return this;
+    }
+
+    public Parent removeChildren(Student student) {
+        this.children.remove(student);
+        student.getParents().remove(this);
+        return this;
+    }
+
+    public void setChildren(Set<Student> students) {
+        this.children = students;
     }
 
     @Override

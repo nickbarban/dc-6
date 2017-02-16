@@ -1,6 +1,25 @@
 {
     "fluentMethods": true,
-    "relationships": [],
+    "relationships": [
+        {
+            "relationshipName": "subject",
+            "otherEntityName": "subject",
+            "relationshipType": "one-to-many",
+            "otherEntityRelationshipName": "teacher"
+        },
+        {
+            "relationshipName": "lessons",
+            "otherEntityName": "lesson",
+            "relationshipType": "one-to-many",
+            "otherEntityRelationshipName": "teacher"
+        },
+        {
+            "relationshipName": "pays",
+            "otherEntityName": "pay",
+            "relationshipType": "one-to-many",
+            "otherEntityRelationshipName": "payer"
+        }
+    ],
     "fields": [
         {
             "fieldName": "firstname",
@@ -78,9 +97,9 @@
         }
     ],
     "changelogDate": "20170214083405",
-    "entityTableName": "teacher",
     "dto": "mapstruct",
-    "pagination": "infinite-scroll",
     "service": "serviceImpl",
+    "entityTableName": "teacher",
+    "pagination": "infinite-scroll",
     "angularJSSuffix": "mySuffix"
 }

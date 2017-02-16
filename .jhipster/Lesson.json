@@ -1,6 +1,33 @@
 {
     "fluentMethods": true,
-    "relationships": [],
+    "relationships": [
+        {
+            "relationshipName": "subject",
+            "otherEntityName": "subject",
+            "relationshipType": "many-to-one",
+            "relationshipValidateRules": [
+                "required"
+            ],
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipName": "students",
+            "otherEntityName": "student",
+            "relationshipType": "many-to-many",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "lessons"
+        },
+        {
+            "relationshipName": "teacher",
+            "otherEntityName": "teacher",
+            "relationshipType": "many-to-one",
+            "relationshipValidateRules": [
+                "required"
+            ],
+            "otherEntityField": "id"
+        }
+    ],
     "fields": [
         {
             "fieldName": "startLesson",
@@ -12,10 +39,10 @@
         }
     ],
     "changelogDate": "20170214083405",
-    "javadoc": "not an ignored comment",
-    "entityTableName": "lesson",
     "dto": "mapstruct",
-    "pagination": "infinite-scroll",
     "service": "serviceImpl",
+    "entityTableName": "lesson",
+    "pagination": "infinite-scroll",
+    "javadoc": "not an ignored comment",
     "angularJSSuffix": "mySuffix"
 }

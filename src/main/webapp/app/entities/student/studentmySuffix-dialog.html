@@ -144,6 +144,20 @@
             </div>
         </div>
 
+        <div class="form-group">
+            <label data-translate="dancekvartalApp.student.subjects" for="field_subjects">Subjects</label>
+            <select class="form-control" id="field_subjects" multiple name="subjects" ng-model="vm.student.subjects" ng-options="subject as subject.id for subject in vm.subjects track by subject.id" required></select>
+        </div>
+        <div ng-show="editForm.subjects.$invalid">
+            <p class="help-block"
+                ng-show="editForm.subjects.$error.required" data-translate="entity.validation.required">
+                This field is required.
+            </p>
+        </div>
+        <div class="form-group">
+            <label data-translate="dancekvartalApp.student.parents" for="field_parents">Parents</label>
+            <select class="form-control" id="field_parents" multiple name="parents" ng-model="vm.student.parents" ng-options="parent as parent.id for parent in vm.parents track by parent.id"></select>
+        </div>
     </div>
     <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">

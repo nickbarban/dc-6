@@ -5,9 +5,9 @@
         .module('dancekvartalApp')
         .controller('ParentMySuffixDialogController', ParentMySuffixDialogController);
 
-    ParentMySuffixDialogController.$inject = ['$timeout', '$scope', '$stateParams', '$uibModalInstance', 'entity', 'Parent'];
+    ParentMySuffixDialogController.$inject = ['$timeout', '$scope', '$stateParams', '$uibModalInstance', 'entity', 'Parent', 'Student'];
 
-    function ParentMySuffixDialogController ($timeout, $scope, $stateParams, $uibModalInstance, entity, Parent) {
+    function ParentMySuffixDialogController ($timeout, $scope, $stateParams, $uibModalInstance, entity, Parent, Student) {
         var vm = this;
 
         vm.parent = entity;
@@ -15,6 +15,7 @@
         vm.datePickerOpenStatus = {};
         vm.openCalendar = openCalendar;
         vm.save = save;
+        vm.students = Student.query();
 
         $timeout(function (){
             angular.element('.form-group:eq(1)>input').focus();

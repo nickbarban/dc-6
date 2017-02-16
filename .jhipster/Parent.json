@@ -1,6 +1,15 @@
 {
     "fluentMethods": true,
-    "relationships": [],
+    "relationships": [
+        {
+            "relationshipName": "children",
+            "otherEntityName": "student",
+            "relationshipType": "many-to-many",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "parent"
+        }
+    ],
     "fields": [
         {
             "fieldName": "firstname",
@@ -61,9 +70,9 @@
         }
     ],
     "changelogDate": "20170214083405",
-    "entityTableName": "parent",
     "dto": "mapstruct",
-    "pagination": "infinite-scroll",
     "service": "serviceImpl",
+    "entityTableName": "parent",
+    "pagination": "infinite-scroll",
     "angularJSSuffix": "mySuffix"
 }

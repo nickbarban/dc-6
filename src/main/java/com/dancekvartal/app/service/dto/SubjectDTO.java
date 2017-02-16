@@ -4,6 +4,8 @@ package com.dancekvartal.app.service.dto;
 import javax.validation.constraints.*;
 import java.io.Serializable;
 import java.math.BigDecimal;
+import java.util.HashSet;
+import java.util.Set;
 import java.util.Objects;
 
 /**
@@ -23,6 +25,10 @@ public class SubjectDTO implements Serializable {
 
     @NotNull
     private BigDecimal price;
+
+    private Long teacherId;
+
+    private Set<StudentDTO> students = new HashSet<>();
 
     public Long getId() {
         return id;
@@ -58,6 +64,22 @@ public class SubjectDTO implements Serializable {
 
     public void setPrice(BigDecimal price) {
         this.price = price;
+    }
+
+    public Long getTeacherId() {
+        return teacherId;
+    }
+
+    public void setTeacherId(Long teacherId) {
+        this.teacherId = teacherId;
+    }
+
+    public Set<StudentDTO> getStudents() {
+        return students;
+    }
+
+    public void setStudents(Set<StudentDTO> students) {
+        this.students = students;
     }
 
     @Override

@@ -26,7 +26,11 @@
             "active": "Active",
             "photoUrl": "Photo Url",
             "userName": "User Name",
-            "password": "Password"
+            "password": "Password",
+            "subjects": "Subjects",
+            "pays": "Pays",
+            "lessons": "Lessons",
+            "parents": "Parents"
         }
     }
 }

@@ -1,5 +1,5 @@
 
-<form name="editForm" role="form" novalidate ng-submit="vm.save()">
+<form name="editForm" role="form" novalidate ng-submit="vm.save()" show-validation>
 
     <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
@@ -34,6 +34,34 @@
                 </div>
         </div>
 
+        <div class="form-group">
+            <label data-translate="dancekvartalApp.lesson.subject" for="field_subject">Subject</label>
+            <select class="form-control" id="field_subject" name="subject" ng-model="vm.lesson.subjectId" ng-options="subject.id as subject.id for subject in vm.subjects"             required>
+                <option value=""></option>
+            </select>
+        </div>
+        <div ng-show="editForm.subject.$invalid">
+            <p class="help-block"
+                ng-show="editForm.subject.$error.required" data-translate="entity.validation.required">
+                This field is required.
+            </p>
+        </div>
+        <div class="form-group">
+            <label data-translate="dancekvartalApp.lesson.students" for="field_students">Students</label>
+            <select class="form-control" id="field_students" multiple name="students" ng-model="vm.lesson.students" ng-options="student as student.id for student in vm.students track by student.id"></select>
+        </div>
+        <div class="form-group">
+            <label data-translate="dancekvartalApp.lesson.teacher" for="field_teacher">Teacher</label>
+            <select class="form-control" id="field_teacher" name="teacher" ng-model="vm.lesson.teacherId" ng-options="teacher.id as teacher.id for teacher in vm.teachers"             required>
+                <option value=""></option>
+            </select>
+        </div>
+        <div ng-show="editForm.teacher.$invalid">
+            <p class="help-block"
+                ng-show="editForm.teacher.$error.required" data-translate="entity.validation.required">
+                This field is required.
+            </p>
+        </div>
     </div>
     <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">

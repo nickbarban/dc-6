@@ -38,6 +38,8 @@
                     <th jh-sort-by="id"><span data-translate="global.field.id">ID</span> <span class="glyphicon glyphicon-sort"></span></th>
                     <th jh-sort-by="startLesson"><span data-translate="dancekvartalApp.lesson.startLesson">Start Lesson</span> <span class="glyphicon glyphicon-sort"></span></th>
                     <th jh-sort-by="endLesson"><span data-translate="dancekvartalApp.lesson.endLesson">End Lesson</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="subjectId"><span data-translate="dancekvartalApp.lesson.subject">Subject</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="teacherId"><span data-translate="dancekvartalApp.lesson.teacher">Teacher</span> <span class="glyphicon glyphicon-sort"></span></th>
                     <th></th>
                 </tr>
             </thead>
@@ -46,6 +48,12 @@
                     <td><a ui-sref="lessonmySuffix-detail({id:lesson.id})">{{lesson.id}}</a></td>
                     <td>{{lesson.startLesson | date:'medium'}}</td>
                     <td>{{lesson.endLesson | date:'medium'}}</td>
+                    <td>
+                        <a ui-sref="subjectmySuffix-detail({id:lesson.subjectId})">{{lesson.subjectId}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="teachermySuffix-detail({id:lesson.teacherId})">{{lesson.teacherId}}</a>
+                    </td>
                     <td class="text-right">
                         <div class="btn-group flex-btn-group-container">
                             <button type="submit"

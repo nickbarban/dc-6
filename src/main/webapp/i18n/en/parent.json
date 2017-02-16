@@ -24,7 +24,8 @@
             "phone2": "Phone 2",
             "email": "Email",
             "active": "Active",
-            "photoUrl": "Photo Url"
+            "photoUrl": "Photo Url",
+            "children": "Children"
         }
     }
 }

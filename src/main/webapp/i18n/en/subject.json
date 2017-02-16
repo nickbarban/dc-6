@@ -19,7 +19,9 @@
             "name": "Name",
             "description": "Description",
             "active": "Active",
-            "price": "Price"
+            "price": "Price",
+            "teacher": "Teacher",
+            "students": "Students"
         }
     }
 }

@@ -9,7 +9,7 @@ import java.util.List;
 /**
  * Mapper for the entity Parent and its DTO ParentDTO.
  */
-@Mapper(componentModel = "spring", uses = {})
+@Mapper(componentModel = "spring", uses = {StudentMapper.class, })
 public interface ParentMapper {
 
     ParentDTO parentToParentDTO(Parent parent);
@@ -19,4 +19,13 @@ public interface ParentMapper {
     Parent parentDTOToParent(ParentDTO parentDTO);
 
     List<Parent> parentDTOsToParents(List<ParentDTO> parentDTOs);
+
+    default Student studentFromId(Long id) {
+        if (id == null) {
+            return null;
+        }
+        Student student = new Student();
+        student.setId(id);
+        return student;
+    }
 }

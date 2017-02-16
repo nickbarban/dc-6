@@ -16,6 +16,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.LinkedList;
@@ -52,7 +53,7 @@ public class LessonResource {
      */
     @PostMapping("/lessons")
     @Timed
-    public ResponseEntity<LessonDTO> createLesson(@RequestBody LessonDTO lessonDTO) throws URISyntaxException {
+    public ResponseEntity<LessonDTO> createLesson(@Valid @RequestBody LessonDTO lessonDTO) throws URISyntaxException {
         log.debug("REST request to save Lesson : {}", lessonDTO);
         if (lessonDTO.getId() != null) {
             return ResponseEntity.badRequest().headers(HeaderUtil.createFailureAlert(ENTITY_NAME, "idexists", "A new lesson cannot already have an ID")).body(null);
@@ -74,7 +75,7 @@ public class LessonResource {
      */
     @PutMapping("/lessons")
     @Timed
-    public ResponseEntity<LessonDTO> updateLesson(@RequestBody LessonDTO lessonDTO) throws URISyntaxException {
+    public ResponseEntity<LessonDTO> updateLesson(@Valid @RequestBody LessonDTO lessonDTO) throws URISyntaxException {
         log.debug("REST request to update Lesson : {}", lessonDTO);
         if (lessonDTO.getId() == null) {
             return createLesson(lessonDTO);

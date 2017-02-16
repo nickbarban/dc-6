@@ -1,14 +1,24 @@
 package com.dancekvartal.app.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
 import org.springframework.data.elasticsearch.annotations.Document;
 
-import javax.persistence.*;
-import javax.validation.constraints.*;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.SequenceGenerator;
+import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
 import java.io.Serializable;
 import java.time.LocalDate;
+import java.util.HashSet;
 import java.util.Objects;
+import java.util.Set;
 
 /**
  * A Teacher.
@@ -17,7 +27,7 @@ import java.util.Objects;
 @Table(name = "teacher")
 @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
 @Document(indexName = "teacher")
-public class Teacher implements Serializable {
+public class Teacher extends Person implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
@@ -68,6 +78,21 @@ public class Teacher implements Serializable {
     @NotNull
     @Column(name = "password", nullable = false)
     private String password;
+
+    @OneToMany(mappedBy = "teacher")
+    @JsonIgnore
+    @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
+    private Set<Subject> subjects = new HashSet<>();
+
+    @OneToMany(mappedBy = "teacher")
+    @JsonIgnore
+    @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
+    private Set<Lesson> lessons = new HashSet<>();
+
+    @OneToMany(mappedBy = "payer")
+    @JsonIgnore
+    @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
+    private Set<Pay> pays = new HashSet<>();
 
     public Long getId() {
         return id;
@@ -218,6 +243,83 @@ public class Teacher implements Serializable {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public Set<Subject> getSubjects() {
+        return subjects;
+    }
+
+    public Teacher subjects(Set<Subject> subjects) {
+        this.subjects = subjects;
+        return this;
+    }
+
+    public Teacher addSubject(Subject subject) {
+        this.subjects.add(subject);
+        subject.setTeacher(this);
+        return this;
+    }
+
+    public Teacher removeSubject(Subject subject) {
+        this.subjects.remove(subject);
+        subject.setTeacher(null);
+        return this;
+    }
+
+    public void setSubjects(Set<Subject> subjects) {
+        this.subjects = subjects;
+    }
+
+    public Set<Lesson> getLessons() {
+        return lessons;
+    }
+
+    public Teacher lessons(Set<Lesson> lessons) {
+        this.lessons = lessons;
+        return this;
+    }
+
+    public Teacher addLessons(Lesson lesson) {
+        this.lessons.add(lesson);
+        lesson.setTeacher(this);
+        return this;
+    }
+
+    public Teacher removeLessons(Lesson lesson) {
+        this.lessons.remove(lesson);
+        lesson.setTeacher(null);
+        return this;
+    }
+
+    public void setLessons(Set<Lesson> lessons) {
+        this.lessons = lessons;
+    }
+
+    public Set<Pay> getPays() {
+        return pays;
+    }
+
+    public Teacher pays(Set<Pay> pays) {
+        this.pays = pays;
+        return this;
+    }
+
+    public Teacher addPays(Pay pay) {
+        this.pays.add(pay);
+        // TODO: 2/16/2017 add List<Person> payers to Pay
+//        pay.setPayer(this);
+        return this;
+    }
+
+    public Teacher removePays(Pay pay) {
+        this.pays.remove(pay);
+        // TODO: 2/16/2017 add List<Person> payers to Pay
+//        pay.setPayer(null);
+        return this;
+    }
+
+    public void setPays(Set<Pay> pays) {
+        this.pays = pays;
     }
 
     @Override

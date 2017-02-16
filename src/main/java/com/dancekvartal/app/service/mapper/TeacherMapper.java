@@ -16,6 +16,9 @@ public interface TeacherMapper {
 
     List<TeacherDTO> teachersToTeacherDTOs(List<Teacher> teachers);
 
+    @Mapping(target = "subjects", ignore = true)
+    @Mapping(target = "lessons", ignore = true)
+    @Mapping(target = "pays", ignore = true)
     Teacher teacherDTOToTeacher(TeacherDTO teacherDTO);
 
     List<Teacher> teacherDTOsToTeachers(List<TeacherDTO> teacherDTOs);

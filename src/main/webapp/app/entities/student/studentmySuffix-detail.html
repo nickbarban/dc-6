@@ -48,6 +48,18 @@
         <dd>
             <span>{{vm.student.password}}</span>
         </dd>
+        <dt><span data-translate="dancekvartalApp.student.subjects">Subjects</span></dt>
+        <dd>
+            <span ng-repeat="subjects in vm.student.subjects">
+                <a ui-sref="subjectmySuffix-detail({id: subjects.id})">{{subjects.id}}</a>{{$last ? '' : ', '}}
+            </span>
+        </dd>
+        <dt><span data-translate="dancekvartalApp.student.parents">Parents</span></dt>
+        <dd>
+            <span ng-repeat="parents in vm.student.parents">
+                <a ui-sref="parentmySuffix-detail({id: parents.id})">{{parents.id}}</a>{{$last ? '' : ', '}}
+            </span>
+        </dd>
     </dl>
 
     <button type="submit"

@@ -81,7 +81,7 @@ public class SubjectServiceImpl implements SubjectService{
     @Transactional(readOnly = true)
     public SubjectDTO findOne(Long id) {
         log.debug("Request to get Subject : {}", id);
-        Subject subject = subjectRepository.findOne(id);
+        Subject subject = subjectRepository.findOneWithEagerRelationships(id);
         SubjectDTO subjectDTO = subjectMapper.subjectToSubjectDTO(subject);
         return subjectDTO;
     }

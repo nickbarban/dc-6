@@ -3,6 +3,8 @@ package com.dancekvartal.app.service.dto;
 import java.time.LocalDate;
 import javax.validation.constraints.*;
 import java.io.Serializable;
+import java.util.HashSet;
+import java.util.Set;
 import java.util.Objects;
 
 /**
@@ -43,6 +45,10 @@ public class StudentDTO implements Serializable {
 
     @NotNull
     private String password;
+
+    private Set<SubjectDTO> subjects = new HashSet<>();
+
+    private Set<ParentDTO> parents = new HashSet<>();
 
     public Long getId() {
         return id;
@@ -127,6 +133,22 @@ public class StudentDTO implements Serializable {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public Set<SubjectDTO> getSubjects() {
+        return subjects;
+    }
+
+    public void setSubjects(Set<SubjectDTO> subjects) {
+        this.subjects = subjects;
+    }
+
+    public Set<ParentDTO> getParents() {
+        return parents;
+    }
+
+    public void setParents(Set<ParentDTO> parents) {
+        this.parents = parents;
     }
 
     @Override

@@ -32,5 +32,27 @@
 
     <cache alias="com.dancekvartal.app.domain.Teacher" uses-template="simple"/>
 
+    <cache alias="com.dancekvartal.app.domain.Student.subjects" uses-template="simple"/>
+
+    <cache alias="com.dancekvartal.app.domain.Student.pays" uses-template="simple"/>
+
+    <cache alias="com.dancekvartal.app.domain.Student.lessons" uses-template="simple"/>
+
+    <cache alias="com.dancekvartal.app.domain.Parent.childres" uses-template="simple"/>
+
+    <cache alias="com.dancekvartal.app.domain.Student.parents" uses-template="simple"/>
+
+    <cache alias="com.dancekvartal.app.domain.Parent.children" uses-template="simple"/>
+
+    <cache alias="com.dancekvartal.app.domain.Subject.students" uses-template="simple"/>
+
+    <cache alias="com.dancekvartal.app.domain.Lesson.students" uses-template="simple"/>
+
+    <cache alias="com.dancekvartal.app.domain.Teacher.subjects" uses-template="simple"/>
+
+    <cache alias="com.dancekvartal.app.domain.Teacher.lessons" uses-template="simple"/>
+
+    <cache alias="com.dancekvartal.app.domain.Teacher.pays" uses-template="simple"/>
+
     <!-- jhipster-needle-ehcache-add-entry -->
 </config>

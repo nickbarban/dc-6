@@ -1,6 +1,24 @@
 {
     "fluentMethods": true,
-    "relationships": [],
+    "relationships": [
+        {
+            "relationshipName": "teacher",
+            "otherEntityName": "teacher",
+            "relationshipType": "many-to-one",
+            "relationshipValidateRules": [
+                "required"
+            ],
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipName": "students",
+            "otherEntityName": "student",
+            "relationshipType": "many-to-many",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "subject"
+        }
+    ],
     "fields": [
         {
             "fieldName": "name",
@@ -29,9 +47,9 @@
         }
     ],
     "changelogDate": "20170214083405",
-    "entityTableName": "subject",
     "dto": "mapstruct",
-    "pagination": "infinite-scroll",
     "service": "serviceImpl",
+    "entityTableName": "subject",
+    "pagination": "infinite-scroll",
     "angularJSSuffix": "mySuffix"
 }

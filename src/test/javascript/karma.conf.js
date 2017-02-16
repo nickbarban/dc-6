@@ -50,7 +50,10 @@ module.exports = function (config) {
             'src/main/webapp/bower_components/ngInfiniteScroll/build/ng-infinite-scroll.js',
             'src/main/webapp/bower_components/bootstrap-material-design/dist/js/material.js',
             'src/main/webapp/bower_components/bootstrap-material-design/dist/js/ripples.js',
+            'src/main/webapp/bower_components/angular-animate/angular-animate.js',
+            'src/main/webapp/bower_components/angular-messages/angular-messages.js',
             'src/main/webapp/bower_components/angular-mocks/angular-mocks.js',
+            'src/main/webapp/bower_components/angular-material/angular-material.js',
             // endbower
             'src/main/webapp/app/app.module.js',
             'src/main/webapp/app/app.state.js',
@@ -100,7 +103,7 @@ module.exports = function (config) {
         // - Safari (only Mac)
         // - PhantomJS
         // - IE (only Windows)
-        browsers: ['PhantomJS'],
+        browsers: ['Chrome'],
 
         // Continuous Integration mode
         // if true, it capture browsers, run tests and exit

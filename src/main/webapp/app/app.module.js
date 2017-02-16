@@ -3,6 +3,7 @@
 
     angular
         .module('dancekvartalApp', [
+            'ngAnimate',
             'ngStorage',
             'tmh.dynamicLocale',
             'pascalprecht.translate',

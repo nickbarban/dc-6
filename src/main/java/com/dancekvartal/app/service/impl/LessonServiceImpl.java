@@ -81,7 +81,7 @@ public class LessonServiceImpl implements LessonService{
     @Transactional(readOnly = true)
     public LessonDTO findOne(Long id) {
         log.debug("Request to get Lesson : {}", id);
-        Lesson lesson = lessonRepository.findOne(id);
+        Lesson lesson = lessonRepository.findOneWithEagerRelationships(id);
         LessonDTO lessonDTO = lessonMapper.lessonToLessonDTO(lesson);
         return lessonDTO;
     }

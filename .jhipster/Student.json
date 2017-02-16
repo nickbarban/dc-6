@@ -1,6 +1,40 @@
 {
     "fluentMethods": true,
-    "relationships": [],
+    "relationships": [
+        {
+            "relationshipName": "subjects",
+            "otherEntityName": "subject",
+            "relationshipType": "many-to-many",
+            "relationshipValidateRules": [
+                "required"
+            ],
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "student"
+        },
+        {
+            "relationshipName": "pays",
+            "otherEntityName": "pay",
+            "relationshipType": "one-to-many",
+            "otherEntityRelationshipName": "payer"
+        },
+        {
+            "relationshipName": "lessons",
+            "otherEntityName": "lesson",
+            "relationshipType": "many-to-many",
+            "ownerSide": false,
+            "otherEntityRelationshipName": "student"
+        },
+        {
+            "relationshipName": "parents",
+            "otherEntityName": "parent",
+            "relationshipType": "many-to-many",
+            "relationshipValidateRules": [],
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "child"
+        }
+    ],
     "fields": [
         {
             "fieldName": "firstname",
@@ -78,9 +112,9 @@
         }
     ],
     "changelogDate": "20170214083405",
-    "entityTableName": "student",
     "dto": "mapstruct",
-    "pagination": "infinite-scroll",
     "service": "serviceImpl",
+    "entityTableName": "student",
+    "pagination": "infinite-scroll",
     "angularJSSuffix": "mySuffix"
 }

@@ -81,7 +81,7 @@ public class StudentServiceImpl implements StudentService{
     @Transactional(readOnly = true)
     public StudentDTO findOne(Long id) {
         log.debug("Request to get Student : {}", id);
-        Student student = studentRepository.findOne(id);
+        Student student = studentRepository.findOneWithEagerRelationships(id);
         StudentDTO studentDTO = studentMapper.studentToStudentDTO(student);
         return studentDTO;
     }

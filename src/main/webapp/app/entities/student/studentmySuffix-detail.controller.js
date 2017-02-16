@@ -5,9 +5,9 @@
         .module('dancekvartalApp')
         .controller('StudentMySuffixDetailController', StudentMySuffixDetailController);
 
-    StudentMySuffixDetailController.$inject = ['$scope', '$rootScope', '$stateParams', 'previousState', 'entity', 'Student'];
+    StudentMySuffixDetailController.$inject = ['$scope', '$rootScope', '$stateParams', 'previousState', 'entity', 'Student', 'Subject', 'Pay', 'Lesson', 'Parent'];
 
-    function StudentMySuffixDetailController($scope, $rootScope, $stateParams, previousState, entity, Student) {
+    function StudentMySuffixDetailController($scope, $rootScope, $stateParams, previousState, entity, Student, Subject, Pay, Lesson, Parent) {
         var vm = this;
 
         vm.student = entity;

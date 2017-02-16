@@ -81,7 +81,7 @@ public class ParentServiceImpl implements ParentService{
     @Transactional(readOnly = true)
     public ParentDTO findOne(Long id) {
         log.debug("Request to get Parent : {}", id);
-        Parent parent = parentRepository.findOne(id);
+        Parent parent = parentRepository.findOneWithEagerRelationships(id);
         ParentDTO parentDTO = parentMapper.parentToParentDTO(parent);
         return parentDTO;
     }

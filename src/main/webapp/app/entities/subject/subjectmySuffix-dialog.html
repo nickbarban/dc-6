@@ -60,6 +60,22 @@
             </div>
         </div>
 
+        <div class="form-group">
+            <label data-translate="dancekvartalApp.subject.teacher" for="field_teacher">Teacher</label>
+            <select class="form-control" id="field_teacher" name="teacher" ng-model="vm.subject.teacherId" ng-options="teacher.id as teacher.id for teacher in vm.teachers"             required>
+                <option value=""></option>
+            </select>
+        </div>
+        <div ng-show="editForm.teacher.$invalid">
+            <p class="help-block"
+                ng-show="editForm.teacher.$error.required" data-translate="entity.validation.required">
+                This field is required.
+            </p>
+        </div>
+        <div class="form-group">
+            <label data-translate="dancekvartalApp.subject.students" for="field_students">Students</label>
+            <select class="form-control" id="field_students" multiple name="students" ng-model="vm.subject.students" ng-options="student as student.id for student in vm.students track by student.id"></select>
+        </div>
     </div>
     <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">

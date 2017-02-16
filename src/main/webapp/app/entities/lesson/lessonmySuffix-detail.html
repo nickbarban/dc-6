@@ -12,6 +12,20 @@
         <dd>
             <span>{{vm.lesson.endLesson | date:'medium'}}</span>
         </dd>
+        <dt><span data-translate="dancekvartalApp.lesson.subject">Subject</span></dt>
+        <dd>
+            <a ui-sref="subjectmySuffix-detail({id:vm.lesson.subjectId})">{{vm.lesson.subjectId}}</a>
+        </dd>
+        <dt><span data-translate="dancekvartalApp.lesson.students">Students</span></dt>
+        <dd>
+            <span ng-repeat="students in vm.lesson.students">
+                <a ui-sref="studentmySuffix-detail({id: students.id})">{{students.id}}</a>{{$last ? '' : ', '}}
+            </span>
+        </dd>
+        <dt><span data-translate="dancekvartalApp.lesson.teacher">Teacher</span></dt>
+        <dd>
+            <a ui-sref="teachermySuffix-detail({id:vm.lesson.teacherId})">{{vm.lesson.teacherId}}</a>
+        </dd>
     </dl>
 
     <button type="submit"

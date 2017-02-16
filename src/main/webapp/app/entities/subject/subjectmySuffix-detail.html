@@ -20,6 +20,16 @@
         <dd>
             <span>{{vm.subject.price}}</span>
         </dd>
+        <dt><span data-translate="dancekvartalApp.subject.teacher">Teacher</span></dt>
+        <dd>
+            <a ui-sref="teachermySuffix-detail({id:vm.subject.teacherId})">{{vm.subject.teacherId}}</a>
+        </dd>
+        <dt><span data-translate="dancekvartalApp.subject.students">Students</span></dt>
+        <dd>
+            <span ng-repeat="students in vm.subject.students">
+                <a ui-sref="studentmySuffix-detail({id: students.id})">{{students.id}}</a>{{$last ? '' : ', '}}
+            </span>
+        </dd>
     </dl>
 
     <button type="submit"

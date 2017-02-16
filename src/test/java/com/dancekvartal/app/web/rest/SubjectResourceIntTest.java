@@ -3,6 +3,7 @@ package com.dancekvartal.app.web.rest;
 import com.dancekvartal.app.DancekvartalApp;
 
 import com.dancekvartal.app.domain.Subject;
+import com.dancekvartal.app.domain.Teacher;
 import com.dancekvartal.app.repository.SubjectRepository;
 import com.dancekvartal.app.service.SubjectService;
 import com.dancekvartal.app.repository.search.SubjectSearchRepository;
@@ -99,6 +100,11 @@ public class SubjectResourceIntTest {
                 .description(DEFAULT_DESCRIPTION)
                 .active(DEFAULT_ACTIVE)
                 .price(DEFAULT_PRICE);
+        // Add required entity
+        Teacher teacher = TeacherResourceIntTest.createEntity(em);
+        em.persist(teacher);
+        em.flush();
+        subject.setTeacher(teacher);
         return subject;
     }
 

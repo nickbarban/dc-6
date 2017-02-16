@@ -5,14 +5,16 @@
         .module('dancekvartalApp')
         .controller('SubjectMySuffixDialogController', SubjectMySuffixDialogController);
 
-    SubjectMySuffixDialogController.$inject = ['$timeout', '$scope', '$stateParams', '$uibModalInstance', 'entity', 'Subject'];
+    SubjectMySuffixDialogController.$inject = ['$timeout', '$scope', '$stateParams', '$uibModalInstance', 'entity', 'Subject', 'Teacher', 'Student'];
 
-    function SubjectMySuffixDialogController ($timeout, $scope, $stateParams, $uibModalInstance, entity, Subject) {
+    function SubjectMySuffixDialogController ($timeout, $scope, $stateParams, $uibModalInstance, entity, Subject, Teacher, Student) {
         var vm = this;
 
         vm.subject = entity;
         vm.clear = clear;
         vm.save = save;
+        vm.teachers = Teacher.query();
+        vm.students = Student.query();
 
         $timeout(function (){
             angular.element('.form-group:eq(1)>input').focus();
